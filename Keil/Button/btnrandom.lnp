@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"btnrandom.obj" 
+TO "btnrandom" 
+RAMSIZE(256) 

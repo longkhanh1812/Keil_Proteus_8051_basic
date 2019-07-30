@@ -1,0 +1,5 @@
+"STARTUP.obj",
+".\0099led.obj",
+".\delay.obj" 
+TO "7segmen-mpx" 
+RAMSIZE(256) 

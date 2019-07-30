@@ -1,0 +1,78 @@
+C51 COMPILER V9.52.0.0   MAIN                                                              07/30/2019 23:34:05 PAGE 1   
+
+
+C51 COMPILER V9.52.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\main.obj
+COMPILER INVOKED BY: E:\KeilC\C51\BIN\C51.EXE ..\led7segman\main.c BROWSE DEBUG OBJECTEXTEND PRINT(.\main.lst) TABS(2) O
+                    -BJECT(.\main.obj)
+
+line level    source
+
+   1          #include"..\Lib\main.h"
+   2          #include"..\Lib\delay.h"
+   3          unsigned char code Code7Seg[] = {0xC0, 0xF9, 0xA4, 0xB0, 0x99, 0x92, 0x82, 0xF8, 0x80, 0x90};
+   4          
+   5          #define LED_CHUC P2
+   6          #define LED_DONVI P3
+   7          
+   8          //Khai bao DEN
+   9          sbit LED_RED =P0^0;
+  10          sbit LED_YELLOW =P0^1;
+  11          sbit LED_GREEN =P0^2;
+  12          
+  13          
+  14          void main()
+  15          {
+  16   1        signed char i;
+  17   1        while(1)
+  18   1        {
+  19   2          
+  20   2          //Den do
+  21   2          LED_RED=0;
+  22   2          LED_YELLOW=1;
+  23   2          LED_GREEN=1;
+  24   2          for(i=20;i>=0;i--)
+  25   2          {
+  26   3            LED_CHUC=Code7Seg[i/10];
+  27   3            LED_DONVI=Code7Seg[i%10];
+  28   3            delay_ms(500);
+  29   3          }
+  30   2          LED_RED=1;
+  31   2          LED_YELLOW=0;
+  32   2          LED_GREEN=1;
+  33   2          for(i=3;i>=0;i--)
+  34   2          {
+  35   3            LED_CHUC=Code7Seg[i/10];
+  36   3            LED_DONVI=Code7Seg[i%10];
+  37   3            delay_ms(500);
+  38   3          }
+  39   2          LED_RED=1;
+  40   2          LED_YELLOW=1;
+  41   2          LED_GREEN=0;
+  42   2          for(i=20;i>=0;i--)
+  43   2          {
+  44   3            LED_CHUC=Code7Seg[i/10];
+  45   3            LED_DONVI=Code7Seg[i%10];
+  46   3            delay_ms(500);
+  47   3          }
+  48   2          
+  49   2        }
+  50   1          
+  51   1        
+  52   1      }
+
+
+C51 COMPILER V9.52.0.0   MAIN                                                              07/30/2019 23:34:05 PAGE 2   
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    254    ----
+   CONSTANT SIZE    =     10    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       1
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

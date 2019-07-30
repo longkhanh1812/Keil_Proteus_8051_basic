@@ -1,0 +1,5 @@
+"STARTUP.obj",
+".\main.obj",
+".\delay.obj" 
+TO "relay" 
+RAMSIZE(256) 
